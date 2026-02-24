@@ -15,9 +15,6 @@ The script will ping URLs outside the container and then re-run inside a contain
 
 ## Expected Output
 
-<details>
-
-<summary>Expected Output</summary>
 
 ```
 $ ./verify_setup.sh 
@@ -55,4 +52,3 @@ sha256:3ce3ad87ad5ea4761bf47bd429f7825702160135b34eced55b540502684fbec8
 [NODE] Fetched https://marketplace.visualstudio.com/_apis/public/gallery/publishers/github/vsextensions/copilot-chat/0.33.2025110604/vspackage - Status: 200
 ```
 
-</details>
