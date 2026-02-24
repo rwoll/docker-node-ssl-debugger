@@ -18,6 +18,7 @@ The script will ping URLs outside the container and then re-run inside a contain
 <details>
 
 <summary>Expected Output</summary>
+
 ```
 $ ./verify_setup.sh 
 [CURL] Verifying URL: https://example.com/
