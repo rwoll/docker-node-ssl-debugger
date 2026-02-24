@@ -15,9 +15,13 @@ for url in "${urls[@]}"; do
 done
 
 if [ $IS_DOCKER -eq 0 ]; then
-    echo "=== [DOCKER] Running in Docker environment ==="
     docker build --quiet -t verify-setup .
+
+    echo "=== [DOCKER] Running WITH NODE_EXTRA_CA_CERTS ==="
     docker run --pull=never --rm -v "$(pwd)":/app -w /app -e IS_DOCKER=1 verify-setup ./verify_setup.sh
+
+    echo "=== [DOCKER] Running WITHOUT NODE_EXTRA_CA_CERTS ==="
+    docker run --pull=never --rm -v "$(pwd)":/app -w /app -e IS_DOCKER=1 -e NODE_EXTRA_CA_CERTS= verify-setup ./verify_setup.sh
 fi
 
 
