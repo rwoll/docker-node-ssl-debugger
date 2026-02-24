@@ -16,7 +16,8 @@ done
 
 if [ $IS_DOCKER -eq 0 ]; then
     echo "=== [DOCKER] Running in Docker environment ==="
-    docker run --rm -v "$(pwd)":/app -w /app -e IS_DOCKER=1 node:latest ./verify_setup.sh
+    docker build --quiet -t verify-setup .
+    docker run --pull=never --rm -v "$(pwd)":/app -w /app -e IS_DOCKER=1 verify-setup ./verify_setup.sh
 fi
 
 
